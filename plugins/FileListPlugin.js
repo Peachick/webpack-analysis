@@ -16,7 +16,7 @@ class FileListPlugin {
           if (asset.endsWith('.js')) {
             compilation.updateAsset(asset, source => {
               return new sources.RawSource(
-                source.source().replace(/\/\*(\*)*(.)*\*\//g, ($, $1, $2) => `/** 添加指纹... ${$2}*/`)
+                source.source().replace(/\/\*(\*)*(.*)\*\//g, ($, $1, $2) => `/** 添加指纹... ${$2}*/`)
               );
             });
           }
